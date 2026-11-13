@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8e8e8">
+  <title>Para Josselin, con todo mi amor ♥</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Parisienne&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --cream:#fffaf3; --paper:#fffdf9; --pink:#f5dadd; --pink2:#f9e9e9;
+      --rose:#d96f7d; --red:#c94d60; --sage:#b8c9ad; --sage-dark:#637d65;
+      --green:#e5eee0; --ink:#4b3c3d; --muted:#8c7778; --gold:#d8b878;
+      --shadow:0 18px 50px rgba(126,82,82,.12);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--cream);color:var(--ink);font-family:"DM Sans",sans-serif;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;z-index:-1;background-image:radial-gradient(#d9bfc0 .7px,transparent .7px);background-size:18px 18px}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .topbar{position:sticky;top:0;z-index:20;background:rgba(255,250,243,.88);backdrop-filter:blur(16px);border-bottom:1px solid #ead8d4}
+    .nav{max-width:1120px;margin:auto;padding:13px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-family:Parisienne,cursive;font-size:29px;color:var(--red);white-space:nowrap}
+    .navlinks{display:flex;gap:23px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#806b6d}
+    .navlinks a:hover{color:var(--red)}
+    .pill{border:0;border-radius:999px;padding:12px 18px;background:var(--red);color:white;font-weight:700;box-shadow:0 7px 18px #c94d6030;cursor:pointer;transition:.2s}
+    .pill:hover{transform:translateY(-2px);background:#b93f53}
+    .hero{max-width:1120px;margin:auto;padding:82px 24px 76px;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:45px;min-height:610px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;background:#f7e5e4;color:#a85b65;border-radius:999px;padding:9px 15px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+    h1,h2,h3,p{margin-top:0}
+    h1{font:clamp(48px,6.5vw,82px)/.98 "DM Serif Display",serif;letter-spacing:-.04em;color:#624b4d;margin:23px 0 17px}
+    h1 em{font-family:Parisienne,cursive;font-style:normal;color:var(--red);font-weight:400}
+    .hero-copy{font-size:16px;line-height:1.85;color:#826f70;max-width:550px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .soft-btn{border:1px solid #e7c9c9;background:#fffaf7;color:#9c5962;border-radius:999px;padding:12px 18px;font-weight:700;cursor:pointer}
+    .hero-art{position:relative;min-height:430px;display:grid;place-items:center}
+    .photo-hero{width:min(100%,390px);height:430px;object-fit:cover;border:12px solid #fffdf9;border-bottom-width:45px;border-radius:210px 210px 24px 24px;box-shadow:var(--shadow);transform:rotate(3deg)}
+    .flower{position:absolute;font-size:60px;filter:drop-shadow(0 5px 5px #a17b6b22);animation:float 5s ease-in-out infinite}
+    .flower.one{top:0;left:0;color:#d96f7d}.flower.two{right:-5px;bottom:20px;animation-delay:1s}.flower.three{left:5px;bottom:40px;font-size:42px;animation-delay:2s}
+    .heart-stamp{position:absolute;right:2%;top:12%;background:#c94d60;color:white;width:78px;height:78px;border-radius:50%;display:grid;place-items:center;font-size:34px;box-shadow:0 10px 25px #c94d6040;transform:rotate(10deg)}
+    @keyframes float{50%{transform:translateY(-12px) rotate(8deg)}}
+    .section{padding:74px 24px}
+    .section-inner{max-width:980px;margin:auto}
+    .section-head{text-align:center;margin:0 auto 34px;max-width:680px}
+    .kicker{font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:var(--sage-dark);font-weight:700}
+    h2{font:clamp(34px,4.5vw,51px)/1.08 "DM Serif Display",serif;color:#624b4d;margin:12px 0}
+    .section-head p{color:var(--muted);line-height:1.75}
+    .letter-section{background:linear-gradient(135deg,#f8e8e8,#f2eee5 55%,#e8efe3)}
+    .envelope,.letter{max-width:760px;margin:auto;background:var(--paper);border:1px solid #ead9d2;border-radius:25px;box-shadow:var(--shadow);text-align:center;padding:42px}
+    .seal{width:84px;height:84px;border-radius:50%;margin:0 auto 20px;background:var(--red);display:grid;place-items:center;color:white;font-size:36px;box-shadow:0 9px 22px #c94d6035}
+    .envelope h3{font:30px Parisienne,cursive;color:var(--red);margin-bottom:8px}
+    .envelope p{color:var(--muted);line-height:1.7}
+    .letter{display:none;text-align:left;padding:clamp(25px,5vw,52px);background:repeating-linear-gradient(#fffdf9,#fffdf9 34px,#f5eeee 35px)}
+    .letter.open{display:block;animation:appear .5s ease}
+    @keyframes appear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+    .letter .salute{font:34px Parisienne,cursive;color:var(--red)}
+    .letter p{font:16px/1.95 "DM Serif Display",serif;color:#655355}
+    .letter .sign{font:30px Parisienne,cursive;color:var(--red);text-align:right;margin-top:25px}
+    .poem-card{max-width:760px;margin:auto;padding:50px 35px;border-radius:28px;background:#e8efe3;border:1px solid #d5e0cf;text-align:center;box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .poem-card:before,.poem-card:after{content:"✿";position:absolute;font-size:95px;color:#b4c6a8;opacity:.28}
+    .poem-card:before{top:-15px;left:12px}.poem-card:after{bottom:-35px;right:15px}
+    .poem-card h2{color:#617a63}
+    .poem{font:italic 18px/2 "DM Serif Display",serif;color:#637363;position:relative;z-index:1}
+    .poem p{margin:20px 0}
+    .gallery{background:#fffaf3}
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:23px}
+    .polaroid{background:white;padding:11px 11px 18px;border-radius:7px;box-shadow:0 12px 30px #795f5f18;cursor:pointer;transition:.25s;transform:rotate(var(--tilt,0deg))}
+    .polaroid:hover{transform:translateY(-7px) rotate(0) scale(1.02);box-shadow:var(--shadow)}
+    .polaroid img{width:100%;height:300px;object-fit:cover;border-radius:4px;display:block;background:#f4e8e4}
+    .polaroid p{font:24px Parisienne,cursive;color:#b65c6a;text-align:center;margin:12px 3px 0}
+    .drawing-wrap{background:#f8e8e8}
+    .drawing-frame{max-width:780px;margin:auto;padding:12px;background:linear-gradient(135deg,#d9b878,#fff0c8,#d8b878);border-radius:18px;box-shadow:var(--shadow);cursor:pointer}
+    .drawing-frame img{display:block;width:100%;border-radius:10px}
+    .drawing-note{text-align:center;font:26px Parisienne,cursive;color:#a95b65;margin:20px 0 0}
+    .birthday{background:linear-gradient(135deg,#e8efe3,#fff4ed)}
+    .cake-card{max-width:760px;margin:auto;background:#fffdf9;border:1px solid #e4e7d9;border-radius:28px;padding:40px 25px;text-align:center;box-shadow:var(--shadow)}
+    .cake{font-size:120px;line-height:1.25;cursor:pointer;filter:drop-shadow(0 10px 8px #ba8c8c25);user-select:none}
+    .cake.lit{animation:bob 2.5s ease-in-out infinite}
+    @keyframes bob{50%{transform:translateY(-7px)}}
+    .wish-row{display:flex;gap:10px;max-width:510px;margin:20px auto 0}
+    input{min-width:0;flex:1;border:1px solid #dfd5ca;border-radius:999px;padding:13px 17px;font:inherit;outline:none;background:white}
+    input:focus{border-color:var(--rose);box-shadow:0 0 0 3px #d96f7d20}
+    .wish-list{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+    .wish-chip{background:#f8e6e7;color:#a34e5d;border-radius:999px;padding:8px 13px;font-size:12px}
+    footer{text-align:center;padding:45px 20px;color:#8e7778}
+    footer .love{font:34px Parisienne,cursive;color:var(--red)}
+    .lightbox{display:none;position:fixed;inset:0;z-index:50;background:#332629ed;align-items:center;justify-content:center;padding:25px;flex-direction:column}
+    .lightbox.show{display:flex}
+    .lightbox img{max-width:min(92vw,900px);max-height:78vh;object-fit:contain;border:9px solid white;border-radius:9px;box-shadow:0 20px 60px #0006}
+    .lightbox p{font:30px Parisienne,cursive;color:#ffe4e5;margin:14px}
+    .close{position:absolute;right:22px;top:18px;border:0;background:#ffffff25;color:white;border-radius:50%;width:45px;height:45px;font-size:25px;cursor:pointer}
+    .petal{position:fixed;pointer-events:none;z-index:40;font-size:20px;animation:fall 2.6s ease-out forwards}
+    @keyframes fall{to{transform:translateY(100vh) rotate(500deg);opacity:0}}
+    @media(max-width:760px){
+      .nav{padding:12px 17px}.navlinks{display:none}.brand{font-size:25px}
+      .hero{grid-template-columns:1fr;padding-top:55px;gap:30px;text-align:center}.hero-copy{margin:auto}.hero-actions{justify-content:center}
+      .hero-art{min-height:350px}.photo-hero{height:350px;width:min(82%,340px)}
+      .section{padding:58px 17px}.gallery-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+      .polaroid img{height:230px}.polaroid p{font-size:21px}
+      .envelope{padding:32px 22px}.wish-row{flex-direction:column}.wish-row .pill{width:100%}
+    }
+    @media(max-width:430px){.gallery-grid{grid-template-columns:1fr 1fr}.polaroid img{height:190px}.polaroid{padding:8px 8px 13px}.polaroid p{font-size:18px}.hero-art{min-height:310px}.photo-hero{height:310px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav">
+      <a class="brand" href="#inicio">Para mi amorcito ♥</a>
+      <div class="navlinks"><a href="#carta">Carta</a><a href="#poema">Poema</a><a href="#galeria">Recuerdos</a><a href="#dibujo">Mi dibujo</a><a href="#deseo">Tu deseo</a></div>
+      <button class="pill" id="heartsBtn">♥ Un poquito de amor</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div>
+        <span class="eyebrow">14 de noviembre · Un día para celebrar</span>
+        <h1>Feliz cumpleaños,<br><em>mi Josselin.</em></h1>
+        <p class="hero-copy">Hoy el mundo tiene una razón más para sonreír: tú. Aunque nos separen kilómetros, quiero que esta pequeña página te haga sentir cerquita de mí. Te amo muchísimo, mi bebé. ♥</p>
+        <div class="hero-actions">
+          <a class="pill" href="#carta">Abrir tu cartita ♥</a>
+          <a class="soft-btn" href="#galeria">Ver nuestros recuerdos</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <span class="flower one">✿</span><span class="flower two">🌷</span><span class="flower three">♡</span>
+        <img class="photo-hero" src="assets/IMG_20261031_202852_790.jpg" alt="Josselin, mi amor">
+        <span class="heart-stamp">♥</span>
+      </div>
+    </section>
+
+    <section class="section letter-section" id="carta">
+      <div class="section-inner">
+        <div class="section-head"><span class="kicker">Unas palabras para ti</span><h2>Una carta hecha con amor</h2><p>Hay cosas que quiero decirte hoy, y otras que quiero recordarte todos los días.</p></div>
+        <div class="envelope" id="envelope">
+          <div class="seal">♥</div>
+          <h3>Para la niña más bonita de mi mundo</h3>
+          <p>Esta cartita es solo tuya. Toca el botón para abrirla.</p>
+          <button class="pill" id="openLetter">Abrir mi carta</button>
+        </div>
+        <article class="letter" id="letter">
+          <p class="salute">Josselin, mi amor hermoso:</p>
+          <p>Hoy celebramos tu vida, y no sabes lo feliz que me hace poder acompañarte en un día tan especial. Hace veintiún años llegó al mundo una persona maravillosa, y yo tuve la suerte de encontrarla y enamorarme de ella.</p>
+          <p>Quiero que nunca dudes de lo muchísimo que te amo. La distancia entre Colombia y México podrá separar nuestros abrazos por ahora, pero no cambia lo que siento por ti. Cada día encuentro una razón nueva para elegirte, admirarte y soñar contigo.</p>
+          <p>Deseo que este nuevo año esté lleno de momentos bonitos, oportunidades, tranquilidad, risas y sueños cumplidos. Quiero verte crecer, cumplir tus metas y estar a tu lado para celebrar cada pequeño y gran logro.</p>
+          <p>Cuando pienso en nuestro futuro, me ilusiona imaginar todo lo que todavía nos queda por vivir: nuestro hogar, nuestras aventuras y esa familia que algún día soñamos construir, con Sienna y Esteban.</p>
+          <p>Gracias por existir, por ser tú y por dejarme quererte. Ojalá pudiera darte hoy el abrazo más largo del mundo. Mientras llega ese momento, te mando todo mi amor desde aquí.</p>
+          <p class="sign">¡Felices 21, mi wawita!<br>Tuyo, hoy y siempre. ♥</p>
+          <div style="text-align:center"><button class="soft-btn" id="closeLetter">Cerrar cartita</button></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="poema">
+      <div class="section-inner">
+        <div class="poem-card">
+          <span class="kicker">Un pequeño poema</span>
+          <h2>Donde florece nuestro amor</h2>
+          <div class="poem">
+            <p>En noviembre nació una estrella,<br>y el mundo se volvió un lugar mejor;<br>desde entonces, mi vida es más bella<br>porque tengo la dicha de tu amor.</p>
+            <p>De Colombia hasta tu México querido,<br>mi cariño siempre te encontrará;<br>ni los kilómetros ni el tiempo transcurrido<br>podrán cambiar lo que mi alma te da.</p>
+            <p>Que florezcan tus sueños, mi vida,<br>que la alegría te venga a abrazar;<br>yo te elijo en cada nueva partida,<br>y mil cumpleaños te quiero celebrar.</p>
+          </div>
+          <div style="font:28px Parisienne,cursive;color:#c94d60;margin-top:20px">Con todo mi corazón ♥</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery" id="galeria">
+      <div class="section-inner">
+        <div class="section-head"><span class="kicker">Mi persona favorita</span><h2>Un rinconcito lleno de ti</h2><p>Cada fotografía guarda algo que me encanta de ti. Toca cualquiera para verla más cerquita.</p></div>
+        <div class="gallery-grid" id="gallery">
+          <div class="polaroid" style="--tilt:-2deg" data-caption="Tu sonrisa favorita, mi amor ✨"><img src="assets/IMG_20260325_183516_314.jpg" alt="Josselin"><p>Mi sonrisa favorita ✨</p></div>
+          <div class="polaroid" style="--tilt:1.5deg" data-caption="Esa mirada que me enamora 💗"><img src="assets/IMG_20260608_180344_738.jpg" alt="Josselin"><p>Esa mirada 💗</p></div>
+          <div class="polaroid" style="--tilt:-1deg" data-caption="Mi reina bonita 👑"><img src="assets/IMG_20261031_202852_790.jpg" alt="Josselin"><p>Mi reina bonita 👑</p></div>
+          <div class="polaroid" style="--tilt:2deg" data-caption="Mi wawita hermosa 🌷"><img src="assets/IMG_20260814_204000_185.jpg" alt="Josselin"><p>Mi wawita 🌷</p></div>
+          <div class="polaroid" style="--tilt:-1.5deg" data-caption="Mi alegría de todos los días ☀️"><img src="assets/PXL_20260716_234251792.jpg" alt="Josselin"><p>Mi alegría ☀️</p></div>
+          <div class="polaroid" style="--tilt:1deg" data-caption="La cumpleañera más preciosa 🎂"><img src="assets/IMG-20260420-WA0038.jpg" alt="Josselin"><p>Mi cumpleañera 🎂</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section drawing-wrap" id="dibujo">
+      <div class="section-inner">
+        <div class="section-head"><span class="kicker">Hecho especialmente para ti</span><h2>Un dibujito con mucho cariño</h2><p>Porque quería regalarte algo que saliera de mis propias manos y que pudieras guardar.</p></div>
+        <div class="drawing-frame" id="drawing"><img src="assets/Feliz Cumpleaños, Mi Amorcito(3).png" alt="Dibujo de cumpleaños para mi amor"></div>
+        <p class="drawing-note">Cada trazito lleva un pedacito de mi corazón. ♥</p>
+      </div>
+    </section>
+
+    <section class="section birthday" id="deseo">
+      <div class="section-inner">
+        <div class="section-head"><span class="kicker">Pide un deseo, mi amor</span><h2>Tu momento especial ✨</h2><p>Piensa en algo bonito, escríbelo si quieres y apaga las velitas.</p></div>
+        <div class="cake-card">
+          <div class="cake lit" id="cake" role="button" tabindex="0" aria-label="Apagar las velitas">🎂</div>
+          <p id="cakeMessage">Que tus 21 estén llenos de amor, salud, aventuras y muchísima felicidad. ♥</p>
+          <div class="wish-row"><input id="wishInput" maxlength="90" placeholder="Escribe tu deseo aquí..."><button class="pill" id="blow">Apagar velitas ♥</button></div>
+          <div class="wish-list" id="wishList"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="love">Te amo demasiado, mi amorcito ♥</div><p>De Colombia a México, con todo mi corazón. · 14 de noviembre de 2026</p></footer>
+
+  <div class="lightbox" id="lightbox" aria-modal="true" role="dialog">
+    <button class="close" id="closeLightbox" aria-label="Cerrar">×</button>
+    <img id="lightboxImg" src="" alt="Fotografía ampliada"><p id="lightboxCaption"></p>
+  </div>
+
+  <script>
+    const $ = s => document.querySelector(s);
+    function shower(count=24){
+      const symbols=['♥','♡','✿','🌷'];
+      for(let i=0;i<count;i++){
+        const el=document.createElement('span');el.className='petal';el.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+        el.style.left=Math.random()*100+'vw';el.style.top=(-20-Math.random()*80)+'px';
+        el.style.color=['#c94d60','#e99aa5','#8ca887','#d8b878'][Math.floor(Math.random()*4)];
+        el.style.animationDelay=Math.random()*.8+'s';el.style.fontSize=(14+Math.random()*18)+'px';
+        document.body.appendChild(el);setTimeout(()=>el.remove(),3600);
+      }
+    }
+    $('#heartsBtn').addEventListener('click',()=>shower(45));
+    $('#openLetter').addEventListener('click',()=>{$('#envelope').style.display='none';$('#letter').classList.add('open');shower(28)});
+    $('#closeLetter').addEventListener('click',()=>{$('#letter').classList.remove('open');$('#envelope').style.display='block'});
+    const lightbox=$('#lightbox');
+    function showImage(src,caption){$('#lightboxImg').src=src;$('#lightboxCaption').textContent=caption;lightbox.classList.add('show')}
+    $('#gallery').querySelectorAll('.polaroid').forEach(card=>card.addEventListener('click',()=>showImage(card.querySelector('img').src,card.dataset.caption)));
+    $('#drawing').addEventListener('click',()=>showImage($('#drawing img').src,'Hecho con todo mi amor ♥'));
+    function closeBox(){lightbox.classList.remove('show')}
+    $('#closeLightbox').addEventListener('click',closeBox);
+    lightbox.addEventListener('click',e=>{if(e.target===lightbox)closeBox()});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeBox()});
+    let lit=true;
+    function blowCandles(){
+      if(lit){lit=false;$('#cake').textContent='🍰';$('#cake').classList.remove('lit');$('#cakeMessage').textContent='¡Deseo enviado al universo! Que se te cumpla todo lo bonito, mi bebé. ♥';const value=$('#wishInput').value.trim();if(value){const chip=document.createElement('span');chip.className='wish-chip';chip.textContent='✨ '+value;$('#wishList').appendChild(chip);$('#wishInput').value=''}$('#blow').textContent='Volver a encender';shower(60)}
+      else{lit=true;$('#cake').textContent='🎂';$('#cake').classList.add('lit');$('#cakeMessage').textContent='Las velitas están listas otra vez. Pide otro deseo, mi amor.';$('#blow').textContent='Apagar velitas ♥'}
+    }
+    $('#blow').addEventListener('click',blowCandles);
+    $('#cake').addEventListener('click',blowCandles);
+    $('#cake').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();blowCandles()}});
+  </script>
+</body>
+</html>
